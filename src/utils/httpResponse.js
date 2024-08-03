@@ -15,7 +15,8 @@ const errors_Dict = {
   UNAUTH: "Unauthorized",
   INT_SERV_ERROR: "Internal Server Error",
   UPD: "Updated",
-  DEL: "Deleted"
+  DEL: "Deleted",
+  VALIDPROD: "Fields Errors"
 };
 
 export class HttpResponse {
@@ -80,6 +81,14 @@ export class HttpResponse {
       status: respCode.INT_SERV_ERROR,
       message: errors_Dict.INT_SERV_ERROR,
       error: data,
+    });
+  }
+
+  validatorProducts(res, data) {
+    return res.status(respCode.NOT_FOUND).json({
+      status: respCode.CREATED,
+      message: errors_Dict.VALIDPROD,
+      data,
     });
   }
 }

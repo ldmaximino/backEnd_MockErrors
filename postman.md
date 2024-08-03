@@ -216,3 +216,20 @@ GET http://localhost:5002/users/ID - name: GET One User
 CREATE TICKET
 -------------
 POST http://localhost:5002/api/tickets/purchase - name POST Create Ticket
+
+MOCKING PRODUCTS
+----------------
+http://localhost:5002/api/products/mockingproduct?cant=100 - name POST Create Mocking Products
+
+CUSTOM ERROR 
+------------
+POST http://localhost:5002/api/products - name: Add Product Code JJ2020 (Generar error without Title and Price)
+body:
+        {
+            "description": "Heladera Bambi 350 Lts Color Blanco",
+            "code": "JJ2020",
+            "status": true,
+            "stock": 45,
+            "category": "Helad-Freezer",
+            "thumbnails": ["HD320F_01.jpg","HD320F_02.jpg"]
+        }
