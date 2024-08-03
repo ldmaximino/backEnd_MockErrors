@@ -9,7 +9,7 @@ import MongoStore from "connect-mongo";
 import { errorHandler } from "./middlewares/error_handler.js";
 import { __dirname } from "./utils/utils.js";
 import { initSocketServer } from "./socket_server.js";
-import { PORT, URI_MONGODB, SECRET_KEY } from './config/config.js';
+import { PORT, URI_MONGODB_ATLAS, URI_MONGODB_LOCAL, SECRET_KEY } from './config/config.js';
 import passport from 'passport';
 import './passport/local_strategy.js';
 import './passport/github_strategy.js';
@@ -20,7 +20,7 @@ const mainRouter = new MainRouter();
 //Store Config definition
 const storeConfig = {
   store: MongoStore.create({
-    mongoUrl: URI_MONGODB,
+    mongoUrl: URI_MONGODB_ATLAS || URI_MONGODB_LOCAL,
     crypto: { secret: SECRET_KEY },
     ttl: 180,
     autoRemove: "interval",
