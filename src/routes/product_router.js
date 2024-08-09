@@ -29,7 +29,7 @@ router.post(
   controller.create
 );
 
-router.post("/mockingproduct", passport.authenticate("current"), controller.createProductMock);
+router.post("/mockingproducts", passport.authenticate("current"), controller.createProductMock);
 
 router.put(
   "/:pid",

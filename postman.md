@@ -219,7 +219,7 @@ POST http://localhost:5002/api/tickets/purchase - name POST Create Ticket
 
 MOCKING PRODUCTS
 ----------------
-http://localhost:5002/api/products/mockingproduct?cant=100 - name POST Create Mocking Products
+http://localhost:5002/api/products/mockingproducts?cant=100 - name POST Create Mocking Products
 
 CUSTOM ERROR 
 ------------

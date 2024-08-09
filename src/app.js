@@ -43,7 +43,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(session(storeConfig));
 
-
 //Handlebars Engine Definition
 app.engine("hbs", handlebars.engine({ extname: "hbs" }));
 app.set("views", __dirname + "/views");

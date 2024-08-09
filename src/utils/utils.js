@@ -1,6 +1,6 @@
-import { dirname } from "path";
+import { dirname, join } from "path";
 import { fileURLToPath } from "url";
-export const __dirname = dirname(fileURLToPath(import.meta.url));
+export const __dirname = join(dirname(fileURLToPath(import.meta.url)),'..');
 
 export const numberFormat = (number) => {
     return number.toFixed(2);
